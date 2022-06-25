@@ -55,12 +55,12 @@
         
         //6面分のテクスチャー読み込み
         var materials1 = [
-          new THREE.MeshLambertMaterial({map1:THREE.ImageUtils.loadTexture("img/iphone.png")}),
-          new THREE.MeshLambertMaterial({map1:THREE.ImageUtils.loadTexture("img/iphone black.png")}),
-          new THREE.MeshLambertMaterial({map1:THREE.ImageUtils.loadTexture("img/silver-gray.png")}),
-          new THREE.MeshLambertMaterial({map1:THREE.ImageUtils.loadTexture("img/iphone under.png")}),
-          new THREE.MeshLambertMaterial({map1:THREE.ImageUtils.loadTexture("img/iphone left.png")}),
-          new THREE.MeshLambertMaterial({map1:THREE.ImageUtils.loadTexture("img/iphone right.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils1.loadTexture("img/iphone.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils1.loadTexture("img/iphone black.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils1.loadTexture("img/silver-gray.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils1.loadTexture("img/iphone under.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils1.loadTexture("img/iphone left.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils1.loadTexture("img/iphone right.png")}),
         ];
  
         var material = new THREE.MeshFaceMaterial(materials1); // マテリアルをセット

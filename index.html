@@ -54,7 +54,7 @@
         scene.add(axisHelper);
         
         //6面分のテクスチャー読み込み
-        var materials = [
+        var materials1 = [
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone.png")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone black.png")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/silver-gray.png")}),
@@ -63,12 +63,12 @@
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone right.png")}),
         ];
  
-        var material = new THREE.MeshFaceMaterial(materials); // マテリアルをセット
+        var material = new THREE.MeshFaceMaterial(materials1); // マテリアルをセット
 
 
         // 箱1を作成
         var geometry = new THREE.BoxGeometry(0.5, 6, 3);
-        var box1 = new THREE.Mesh(geometry, materials);
+        var box1 = new THREE.Mesh(geometry, materials1);
         box1.position.set(5,0,0); //位置を指定
         scene.add(box1);
 

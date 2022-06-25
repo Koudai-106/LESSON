@@ -66,11 +66,31 @@
         var material = new THREE.MeshFaceMaterial(materials); // マテリアルをセット
 
 
-        // 箱を作成
+        // 箱1を作成
         var geometry = new THREE.BoxGeometry(0.5, 6, 3);
         var box1 = new THREE.Mesh(geometry, materials);
-        box1.position.set(0,0,0); //位置を指定
+        box1.position.set(5,0,0); //位置を指定
         scene.add(box1);
+
+        // 箱2を作成
+        var geometry = new THREE.BoxGeometry(0.5, 6, 3);
+        var box2 = new THREE.Mesh(geometry, materials);
+        box2.position.set(-5,0,0); //位置を指定
+        scene.add(box2);
+
+        // 箱3を作成
+        var geometry = new THREE.BoxGeometry(0.5, 6, 3);
+        var box3 = new THREE.Mesh(geometry, materials);
+        box3.position.set(0,0,5); //位置を指定
+        box3.rotation.y = 4.7;
+        scene.add(box3);
+
+        // 箱4を作成
+        var geometry = new THREE.BoxGeometry(0.5, 6, 3);
+        var box4 = new THREE.Mesh(geometry, materials);
+        box4.position.set(0,0,-5); //位置を指定
+        box4.rotation.y = 4.7;
+        scene.add(box4);
 
         update();
 

@@ -38,6 +38,7 @@
         const controls = new THREE.OrbitControls(camera, document.body); 
         
         // 平行光源1
+        /*
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
         directionalLight1.position.set(10, 10, 10);
         directionalLight1.castShadow = true;
@@ -49,6 +50,7 @@
         directionalLight2.castShadow = true;
         // シーンに追加
         scene.add(directionalLight2);
+        */
 
         // 照明を作成SpotLight(色, 光の強さ, 距離, 照射角, ボケ具合, 減衰率)
         var light = new THREE.SpotLight(0xffffff, 1, 100, Math.PI / 20, 0.2);

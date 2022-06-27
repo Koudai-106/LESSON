@@ -69,6 +69,7 @@
         scene.add(plane);
         
         // ジョブズをスプライトで作成
+        /*
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("img/Jobs.png");
         const material = new THREE.SpriteMaterial({ map: texture,});
@@ -76,6 +77,7 @@
         sprite.position.set(0,0,0); 
         sprite1.scale.set(0.5, 0.5, 0.5);
         scene.add(sprite);
+        */
 
 
         //blackのテクスチャー読み込み
@@ -159,7 +161,7 @@
         // LINE読み込み
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("img/LINE.png");
-        var mat = new THREE.MeshStandardMaterial();
+        var mat = new THREE.MeshStandardMaterial({transparent:true});
         mat.map = texture;
 
         // LINEを作成

@@ -54,8 +54,17 @@
         scene.add(gridHelper);
         const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
+
+        // 平面を作成
+        var planeGeometry = new THREE.PlaneGeometry(50,50);
+        var planeMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+        plane.receiveShadow = true; //影がつく
+        plane.rotation.set( -Math.PI/2, 0, 0 );
+        plane.position.set(0,-3.0,-2);
+        scene.add(plane);
         
-        //6面分のテクスチャー読み込み
+        //blackのテクスチャー読み込み
         var materials = [
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone.png")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone black.png")}),
@@ -64,20 +73,18 @@
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone left.png")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone right.png")}),
         ];
- 
+
         var materials = new THREE.MeshFaceMaterial(materials); // マテリアルをセット
 
-
-        // 箱1を作成
-        var geometry = new THREE.Box1Geometry(0.5, 6, 3);
+        // black箱1を作成
+        var geometry = new THREE.BoxGeometry(0.5, 6, 3);
         var box1 = new THREE.Mesh(geometry, materials);
         box1.castShadow = true;
+        box1.rotation.x = 0.5;
         box1.position.set(5,0,0); //位置を指定
-      
 
 
-        //6面分のテクスチャー読み込み
-        /*
+        //redのテクスチャー読み込み
         var materials = [
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone.png")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone red.png")}),
@@ -86,31 +93,56 @@
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone left red.png")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone right.png")}),
         ];
-        
- 
-        var materials = new THREE.MeshFaceMaterial(materials); // マテリアルをセット
-        */
 
-        // 箱2を作成
-        var geometry = new THREE.Box2Geometry(0.5, 6, 3);
+        var materials = new THREE.MeshFaceMaterial(materials); // マテリアルをセット
+        
+        // red箱2を作成
+        var geometry = new THREE.BoxGeometry(0.5, 6, 3);
         var box2 = new THREE.Mesh(geometry, materials);
         box2.castShadow = true;
+        box2.rotation.x = 0.5;
         box2.position.set(-5,0,0); //位置を指定
         
 
-        // 箱3を作成
-        var geometry = new THREE.Box3Geometry(0.5, 6, 3);
+        //greenのテクスチャー読み込み
+        var materials = [
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone green.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone over green.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone under.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone left green.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone right.png")}),
+        ];
+
+        var materials = new THREE.MeshFaceMaterial(materials); // マテリアルをセット
+
+        // green箱3を作成
+        var geometry = new THREE.BoxGeometry(0.5, 6, 3);
         var box3 = new THREE.Mesh(geometry, materials);
         box3.castShadow = true;
         box3.position.set(0,0,5); //位置を指定
+        box3.rotation.x = -0.5;
         box3.rotation.y = 4.7;
         
 
-        // 箱4を作成
-        var geometry = new THREE.Box4Geometry(0.5, 6, 3);
+        //blueのテクスチャー読み込み
+        var materials = [
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone blue.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone over blue.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone under.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone left blue.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/iphone right.png")}),
+        ];
+
+        var materials = new THREE.MeshFaceMaterial(materials); // マテリアルをセット
+
+        // blue箱4を作成
+        var geometry = new THREE.BoxGeometry(0.5, 6, 3);
         var box4 = new THREE.Mesh(geometry, materials);
         box4.castShadow = true;
         box4.position.set(0,0,-5); //位置を指定
+        box4.rotation.x = -0.5;
         box4.rotation.y = 4.7;
         
 
@@ -139,7 +171,9 @@
         requestAnimationFrame(update);
         
         // iPhoneを回転させる
-        iPhone.rotation.z += 0.05;
+        /*
+        iPhone.rotation.y += 0.01;
+        */
 
       }
     }

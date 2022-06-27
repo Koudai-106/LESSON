@@ -140,6 +140,20 @@
         box4.castShadow = true;
         box4.position.set(0,0,-5); //位置を指定
         box4.rotation.y = 4.7;
+
+
+        // LINE読み込み
+        var textureLoader = new THREE.TextureLoader();  
+        var texture = textureLoader.load("img/LINE.jpg");
+        var mat = new THREE.MeshStandardMaterial();
+        mat.map = texture;
+
+        // LINEを作成
+        var geometry = new THREE.BoxGeometry(1, 1, 1);
+        var box5 = new THREE.Mesh(geometry, mat);
+        box5.castShadow = true;
+        box5.position.set(0,5,-5); //位置を指定
+        scene.add(box);
         
 
         //iPhoneのオブジェクト

@@ -175,7 +175,7 @@
         // Twitter読み込み
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("img/twitter.png");
-        var mat = new THREE.MeshStandardMaterial();
+        var mat = new THREE.MeshStandardMaterial({transparent:true});
         mat.map = texture;
 
         // Twitterを作成
@@ -189,7 +189,7 @@
         // YouTube読み込み
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("img/YouTube.png");
-        var mat = new THREE.MeshStandardMaterial();
+        var mat = new THREE.MeshStandardMaterial({transparent:true});
         mat.map = texture;
 
         // YouTubeを作成

@@ -154,6 +154,34 @@
         box5.castShadow = true;
         box5.position.set(0,5,-5); //位置を指定
         scene.add(box5);
+
+
+        // Twitter読み込み
+        var textureLoader = new THREE.TextureLoader();  
+        var texture = textureLoader.load("img/twitter.png");
+        var mat = new THREE.MeshStandardMaterial();
+        mat.map = texture;
+
+        // Twitterを作成
+        var geometry = new THREE.BoxGeometry(1, 1, 1);
+        var box6 = new THREE.Mesh(geometry, mat);
+        box6.castShadow = true;
+        box6.position.set(0,5,5); //位置を指定
+        scene.add(box6);
+
+
+        // YouTube読み込み
+        var textureLoader = new THREE.TextureLoader();  
+        var texture = textureLoader.load("img/YouTube.png");
+        var mat = new THREE.MeshStandardMaterial();
+        mat.map = texture;
+
+        // YouTubeを作成
+        var geometry = new THREE.BoxGeometry(1, 1, 1);
+        var box7 = new THREE.Mesh(geometry, mat);
+        box7.castShadow = true;
+        box7.position.set(5,5,0); //位置を指定
+        scene.add(box7);
         
 
         //iPhoneのオブジェクト

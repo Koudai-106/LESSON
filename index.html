@@ -21,7 +21,7 @@
         renderer.setSize(width, height);
 
         // 背景の色を設定
-        renderer.setClearColor(0xfff000);
+        renderer.setClearColor(0xfff0);
 
 
         // シーンを作成
@@ -57,8 +57,11 @@
 
         // 平面を作成
         var planeGeometry = new THREE.PlaneGeometry(50,50);
-        var planeMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
-        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+        var textureLoader = new THREE.TextureLoader();  
+        var texture = textureLoader.load("img/LINE.png");
+        var mat = new THREE.MeshStandardMaterial();
+        mat.map = texture;
+        var plane = new THREE.Mesh(planeGeometry,mat);
         plane.receiveShadow = true; //影がつく
         plane.rotation.set( -Math.PI/2, 0, 0 );
         plane.position.set(0,-3.0,-2);

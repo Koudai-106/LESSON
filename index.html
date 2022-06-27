@@ -144,7 +144,7 @@
 
         // LINE読み込み
         var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("img/LINE.jpg");
+        var texture = textureLoader.load("img/LINE.png");
         var mat = new THREE.MeshStandardMaterial();
         mat.map = texture;
 
@@ -181,9 +181,9 @@
         requestAnimationFrame(update);
         
         // iPhoneを回転させる
-        /*
+        
         iPhone.rotation.y += 0.01;
-        */
+        
 
       }
     }

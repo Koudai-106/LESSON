@@ -171,7 +171,7 @@
         var box5 = new THREE.Mesh(geometry, mat);
         box5.castShadow = true;
         box5.position.set(0,8,-20); //位置を指定
-        scene.add(box5);
+        //scene.add(box5);
 
 
         // Twitter読み込み
@@ -185,7 +185,7 @@
         var box6 = new THREE.Mesh(geometry, mat);
         box6.castShadow = true;
         box6.position.set(0,8,20); //位置を指定
-        scene.add(box6);
+        //scene.add(box6);
 
 
         // YouTube読み込み
@@ -199,7 +199,21 @@
         var box7 = new THREE.Mesh(geometry, mat);
         box7.castShadow = true;
         box7.position.set(20,8,0); //位置を指定
-        scene.add(box7);
+        //scene.add(box7);
+
+
+        // Safari読み込み
+        var textureLoader = new THREE.TextureLoader();  
+        var texture = textureLoader.load("img/Safari.png");
+        var mat = new THREE.MeshStandardMaterial({transparent:true});
+        mat.map = texture;
+
+        // Safariを作成
+        var geometry = new THREE.BoxGeometry(5, 5, 5);
+        var box8 = new THREE.Mesh(geometry, mat);
+        box8.castShadow = true;
+        box8.position.set(-20,8,0); //位置を指定
+        //scene.add(box8);
         
 
         //iPhoneのオブジェクト
@@ -212,12 +226,30 @@
         scene.add( iPhone );
 
         //全体のオブジェクト
-        const all = new THREE.Group();
-        all.add(plane);//平面を追加
-        all.add(iPhone); // iPhoneを追加
-        all.castShadow = true;
-        all.position.set(0,0,0);//全体グループの原点の位置
-        scene.add(all); 
+        const all1 = new THREE.Group();
+        all1.add(plane);//平面を追加
+        all1.add(iPhone); // iPhoneを追加
+        all1.castShadow = true;
+        all1.position.set(0,0,0);//全体グループの原点の位置
+        scene.add(all1); 
+
+
+        //Applicationのオブジェクト
+        const Application = new THREE.Group();
+        Application.add(box5); 
+        Application.add(box6); 
+        Application.add(box7); 
+        Application.add(box8); 
+        Application.position.set(0,5,0);
+        scene.add( Application );
+
+        //全体のオブジェクト
+        const all2 = new THREE.Group();
+        all2.add(plane);//平面を追加
+        all2.add(iPhone); // iPhoneを追加
+        all2.castShadow = true;
+        all2.position.set(0,5,0);//全体グループの原点の位置
+        scene.add(all2); 
 
 
         // グループを作成
@@ -249,9 +281,11 @@
         requestAnimationFrame(update);
         
         // iPhoneを回転させる
-        
         iPhone.rotation.y += -0.01;
-        
+
+        // Applicationを回転させる
+        Application.rotation.x += 0.01;
+        Application.rotation.y += 0.01;
 
       }
     }

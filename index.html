@@ -7,6 +7,12 @@
     <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
+  <h1>まとめ</h1>
+  マウスによる画面操作・背景色の設定・平面にテクスチャを貼り付けて作成・影つけの実現<br>
+  ジョブズ氏をスプライトで作成し、ビルボードを実現<br>
+  箱を４つ作成し、６面分のテクスチャマッピングを行い、iPhoneとしてグループ化させて回転させた<br>
+  箱を４つ作成し、テクスチャを貼り付け、アプリケーションとしてグループ化させて回転させた<br>
+  <br>
  <script>
     // ページの読み込みを待つ
     window.addEventListener('DOMContentLoaded', init);
@@ -26,9 +32,11 @@
         // 背景の色を設定
         renderer.setClearColor(0x708090);
 
-
         // シーンを作成
         const scene = new THREE.Scene();
+
+        // フォグを設定
+        scene.fog = new THREE.Fog(0xff0, 50, 2000);
 
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(120, width / height);
@@ -249,27 +257,6 @@
         all2.castShadow = true;
         all2.position.set(0,5,0);//全体グループの原点の位置
         scene.add(all2); 
-
-
-        // グループを作成
-        /*
-        const group = new THREE.Group();
-        scene.add(group);
-        const geometry = new THREE.BoxBufferGeometry(50, 50, 50);
-        const materials = new THREE.MeshStandardMaterial();
-
-        for (let i = 0; i < 10; i++) {
-          const mesh = new THREE.Mesh(geometry, material);
-          mesh.position.x = (Math.random() - 0.5) * 2000;
-          mesh.position.y = (Math.random() - 0.5) * 2000;
-          mesh.position.z = (Math.random() - 0.5) * 2000;
-          mesh.rotation.x = Math.random() * 2 * Math.PI;
-          mesh.rotation.y = Math.random() * 2 * Math.PI;
-          mesh.rotation.z = Math.random() * 2 * Math.PI;
-          // グループに格納する
-          group.add(mesh);
-        }
-        */
 
         update();
 

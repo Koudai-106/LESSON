@@ -33,7 +33,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(120, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 10, 20);
+        camera.position.set(0, 15, 20);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -97,7 +97,7 @@
         var geometry = new THREE.BoxGeometry(0.5, 6, 3);
         var box1 = new THREE.Mesh(geometry, materials);
         box1.castShadow = true;
-        box1.position.set(7,0,0); //位置を指定
+        box1.position.set(8,0,0); //位置を指定
 
 
         //redのテクスチャー読み込み
@@ -116,7 +116,7 @@
         var geometry = new THREE.BoxGeometry(0.5, 6, 3);
         var box2 = new THREE.Mesh(geometry, materials);
         box2.castShadow = true;
-        box2.position.set(-7,0,0); //位置を指定
+        box2.position.set(-8,0,0); //位置を指定
         
 
         //greenのテクスチャー読み込み
@@ -135,7 +135,7 @@
         var geometry = new THREE.BoxGeometry(0.5, 6, 3);
         var box3 = new THREE.Mesh(geometry, materials);
         box3.castShadow = true;
-        box3.position.set(0,0,7); //位置を指定
+        box3.position.set(0,0,8); //位置を指定
         box3.rotation.y = 4.7;
         
 
@@ -155,7 +155,7 @@
         var geometry = new THREE.BoxGeometry(0.5, 6, 3);
         var box4 = new THREE.Mesh(geometry, materials);
         box4.castShadow = true;
-        box4.position.set(0,0,-7); //位置を指定
+        box4.position.set(0,0,-8); //位置を指定
         box4.rotation.y = 4.7;
 
 
